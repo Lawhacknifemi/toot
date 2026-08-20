@@ -7,9 +7,8 @@ package txn
  * https://docs.joinmastodon.org/methods/media/
  ******************************************/
 
+// PostMedia is the input for POST /api/v2/media, which returns MediaAttachment.
 // https://docs.joinmastodon.org/methods/media/#v2
-// POST /api/v2/media
-// Returns: MediaAttachment
 type PostMedia struct {
 	Host        string `header:"Host"`
 	File        string `form:"file"`

@@ -6,5 +6,6 @@ package scope
  * https://docs.joinmastodon.org/methods/bookmarks/
  ******************************************/
 
+// GetBookmarks is the OAuth scope required by GET /api/v1/bookmarks.
 // https://docs.joinmastodon.org/methods/bookmarks/#get
 const GetBookmarks = ReadBookmarks

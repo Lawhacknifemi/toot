@@ -6,16 +6,14 @@ package txn
  * https://docs.joinmastodon.org/methods/profile/
  ******************************************/
 
+// DeleteProfile_Avatar is the input for DELETE /api/v1/profile/avatar, which returns CredentialAccount.
 // https://docs.joinmastodon.org/methods/profile/#delete-profile-avatar
-// DELETE /api/v1/profile/avatar
-// Returns: CredentialAccount
 type DeleteProfile_Avatar struct {
 	Host string `header:"Host"`
 }
 
+// DeleteProfile_Header is the input for DELETE /api/v1/profile/header, which returns CredentialAccount.
 // https://docs.joinmastodon.org/methods/profile/#delete-profile-header
-// DELETE /api/v1/profile/header
-// Returns: CredentialAccount
 type DeleteProfile_Header struct {
 	Host string `header:"Host"`
 }

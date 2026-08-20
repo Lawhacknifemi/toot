@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/blocks/
  ******************************************/
 
+// GetBlocks is the input for GET /api/v1/blocks, which returns []Account.
 // https://docs.joinmastodon.org/methods/blocks/#get
-// GET /api/v1/blocks
-// Returns: Array of Account
 type GetBlocks struct {
 	Host    string `header:"Host"`
 	MaxID   string `query:"max_id"`

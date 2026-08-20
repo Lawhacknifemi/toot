@@ -7,5 +7,6 @@ package scope
  * https://docs.joinmastodon.org/methods/media/
  ******************************************/
 
+// PostMedia is the OAuth scope required by POST /api/v2/media.
 // https://docs.joinmastodon.org/methods/media/#v2
 const PostMedia = WriteMedia

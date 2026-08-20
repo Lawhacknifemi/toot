@@ -6,5 +6,6 @@ package route
  * https://docs.joinmastodon.org/methods/endorsements/
  ******************************************/
 
+// GetEndorsements is the route for GET /api/v1/endorsements.
 // https://docs.joinmastodon.org/methods/endorsements/#get
 const GetEndorsements = "/api/v1/endorsements"

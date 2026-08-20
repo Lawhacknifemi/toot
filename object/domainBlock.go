@@ -9,8 +9,8 @@ type DomainBlock struct {
 	Comment  string `json:"comment,omitempty"` // An optional reason for the domain block.
 }
 
-// Users from this domain will be hidden from timelines, threads, and notifications (unless you follow the user).
+// DomainBlockSeveritySilence hides users from this domain from timelines, threads, and notifications, unless you follow the user.
 const DomainBlockSeveritySilence = "silence"
 
-// Incoming messages from this domain will be rejected and dropped entirely.
+// DomainBlockSeveritySuspend rejects and drops incoming messages from this domain entirely.
 const DomainBlockSeveritySuspend = "suspend"

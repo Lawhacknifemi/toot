@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/favourites/
  ******************************************/
 
+// GetFavourites is the input for GET /api/v1/favourites, which returns []Status.
 // https://docs.joinmastodon.org/methods/favourites/#get
-// GET /api/v1/favourites
-// Returns: Array of Status
 type GetFavourites struct {
 	Host    string `header:"Host"`
 	MaxID   string `query:"max_id"`

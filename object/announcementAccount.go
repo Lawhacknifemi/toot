@@ -1,5 +1,6 @@
 package object
 
+// AnnouncementAccount represents an account mentioned within an announcement.
 // https://docs.joinmastodon.org/entities/Announcement/#Account
 type AnnouncementAccount struct {
 	ID       string `json:"id"`       // The account ID of the mentioned user.

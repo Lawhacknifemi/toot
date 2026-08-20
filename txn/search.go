@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/search/
  ******************************************/
 
+// GetSearch is the input for GET /api/v2/search, which returns Search.
 // https://docs.joinmastodon.org/methods/search/#v2
-// GET /api/v2/search
-// Returns: Search
 type GetSearch struct {
 	Host              string `header:"Host"`
 	Q                 string `query:"q"`

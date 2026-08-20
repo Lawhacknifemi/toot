@@ -1,6 +1,6 @@
 package object
 
-// Usage statistics for given days (typically the past week).
+// TagHistory holds the usage statistics for a hashtag on a given day.
 // https://docs.joinmastodon.org/entities/Tag/#history
 type TagHistory struct {
 	Day      string `json:"day"`      // UNIX timestamp on midnight of the given day.

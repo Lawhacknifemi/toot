@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/emails/
  ******************************************/
 
+// PostEmailConfirmation is the input for POST /api/v1/email/confirmation, which returns an empty object.
 // https://docs.joinmastodon.org/methods/emails/#confirmation
-// POST /api/v1/email/confirmation
-// Returns: Empty object
 type PostEmailConfirmation struct {
 	Host string `header:"Host"`
 }

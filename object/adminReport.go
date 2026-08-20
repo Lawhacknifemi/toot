@@ -1,6 +1,6 @@
 package object
 
-// Admin::Report represents admin-level information about a filed report.
+// AdminReport represents admin-level information about a filed report.
 // https://docs.joinmastodon.org/entities/Admin_Report/
 type AdminReport struct {
 	ID                   string        `json:"id"`                                // The ID of the report in the database.

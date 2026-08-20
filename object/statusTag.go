@@ -1,5 +1,6 @@
 package object
 
+// StatusTag represents a hashtag used within the content of a status.
 // https://docs.joinmastodon.org/entities/Status/#Tag
 type StatusTag struct {
 	Name string `json:"name"` // The value of the hashtag after the # sign.

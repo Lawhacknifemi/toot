@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/oembed/
  ******************************************/
 
+// GetOEmbed is the input for GET /api/oembed, which returns OEmbed metadata.
 // https://docs.joinmastodon.org/methods/oembed/#get
-// GET /api/oembed
-// Returns: OEmbed metadata
 type GetOEmbed struct {
 	Host      string `header:"Host"`
 	URL       string `query:"url"`

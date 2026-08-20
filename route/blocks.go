@@ -6,5 +6,6 @@ package route
  * https://docs.joinmastodon.org/methods/blocks/
  ******************************************/
 
+// GetBlocks is the route for GET /api/v1/blocks.
 // https://docs.joinmastodon.org/methods/blocks/#get
 const GetBlocks = "/api/v1/blocks"

@@ -6,33 +6,29 @@ package txn
  * https://docs.joinmastodon.org/methods/featured_tags/
  ******************************************/
 
+// GetFeaturedTags is the input for GET /api/v1/featured_tags, which returns []FeaturedTag.
 // https://docs.joinmastodon.org/methods/featured_tags/#get
-// GET /api/v1/featured_tags
-// Returns: Array of FeaturedTag
 type GetFeaturedTags struct {
 	Host          string `header:"Host"`
 	Authorization string `header:"Authorization"`
 }
 
+// PostFeaturedTag is the input for POST /api/v1/featured_tags, which returns FeaturedTag.
 // https://docs.joinmastodon.org/methods/featured_tags/#feature
-// POST /api/v1/featured_tags
-// Returns: FeaturedTag
 type PostFeaturedTag struct {
 	Host string `header:"Host"`
 	Name string `form:"name"`
 }
 
+// DeleteFeaturedTag is the input for DELETE /api/v1/featured_tags/:id, which returns an empty object.
 // https://docs.joinmastodon.org/methods/featured_tags/#unfeature
-// DELETE /api/v1/featured_tags/:id
-// Returns: Empty object
 type DeleteFeaturedTag struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// GetFeaturedTags_Suggestions is the input for GET /api/v1/featured_tags/suggestions, which returns []FeaturedTag.
 // https://docs.joinmastodon.org/methods/featured_tags/#suggestions
-// GET /api/v1/featured_tags/suggestions
-// Returns: Array of FeaturedTag
 type GetFeaturedTags_Suggestions struct {
 	Host string `header:"Host"`
 }

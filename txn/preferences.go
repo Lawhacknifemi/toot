@@ -6,9 +6,8 @@ package txn
 * https://docs.joinmastodon.org/methods/preferences/
 ******************************************/
 
+// GetPreferences is the input for GET /api/v1/preferences, which returns Preferences.
 // https://docs.joinmastodon.org/methods/preferences/#get
-// GET /api/v1/preferences
-// Returns: Preferences
 type GetPreferences struct {
 	Host string `header:"Host"`
 }

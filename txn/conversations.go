@@ -7,9 +7,8 @@ package txn
  * https://docs.joinmastodon.org/methods/conversations/
  ******************************************/
 
+// GetConversations is the input for GET /api/v1/conversations, which returns []Conversation.
 // https://docs.joinmastodon.org/methods/conversations/#get
-// GET /api/v1/conversations
-// Returns: Array of Conversation
 type GetConversations struct {
 	Host    string `header:"Host"`
 	MaxID   string `query:"max_id"`
@@ -29,17 +28,15 @@ func (t GetConversations) QueryPage() QueryPage {
 	}
 }
 
+// DeleteConversation is the input for DELETE /api/v1/conversations/:id, which returns an empty object.
 // https://docs.joinmastodon.org/methods/conversations/#delete
-// DELETE /api/v1/conversations/:id
-// Returns: Empty struct
 type DeleteConversation struct {
 	Host string `header:"Host"`
 	ID   string `uri:"id"`
 }
 
+// PostConversationRead is the input for POST /api/v1/conversations/:id/read, which returns Conversation.
 // https://docs.joinmastodon.org/methods/conversations/#read
-// POST /api/v1/conversations/:id/read
-// Returns: Conversation
 type PostConversationRead struct {
 	Host string `header:"Host"`
 	ID   string `uri:"id"`

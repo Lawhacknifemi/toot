@@ -7,8 +7,10 @@ package scope
 * https://docs.joinmastodon.org/methods/polls/
 ******************************************/
 
+// GetPoll is the OAuth scope required by GET /api/v1/polls/:id.
 // https://docs.joinmastodon.org/methods/polls/#get
 const GetPoll = ReadStatuses
 
+// PostPoll_Votes is the OAuth scope required by POST /api/v1/polls/:id/votes.
 // https://docs.joinmastodon.org/methods/polls/#vote
 const PostPoll_Votes = WriteStatuses

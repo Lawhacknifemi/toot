@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/notifications/
  ******************************************/
 
+// GetNotifications is the input for GET /api/v1/notifications, which returns []Notification.
 // https://docs.joinmastodon.org/methods/notifications/#get
-// GET /api/v1/notifications
-// Returns: []Notification
 type GetNotifications struct {
 	Host         string   `header:"Host"`
 	MaxID        string   `query:"max_id"`
@@ -31,24 +30,21 @@ func (t GetNotifications) QueryPage() QueryPage {
 	}
 }
 
+// GetNotification is the input for GET /api/v1/notifications/:id, which returns Notification.
 // https://docs.joinmastodon.org/methods/notifications/#get-one
-// GET /api/v1/notifications/:id
-// Returns: Notification
 type GetNotification struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostNotifications_Clear is the input for POST /api/v1/notifications/clear, which returns an empty object.
 // https://docs.joinmastodon.org/methods/notifications/#clear
-// POST /api/v1/notifications/clear
-// Returns: Empty Struct
 type PostNotifications_Clear struct {
 	Host string `header:"Host"`
 }
 
+// PostNotification_Dismiss is the input for POST /api/v1/notifications/dismiss, which returns an empty object.
 // https://docs.joinmastodon.org/methods/notifications/#dismiss
-// POST /api/v1/notifications/dismiss
-// Returns: Empty Struct
 type PostNotification_Dismiss struct {
 	Host string `header:"Host"`
 	ID   string `form:"id"`

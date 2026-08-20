@@ -4,6 +4,7 @@ package object
 // https://docs.joinmastodon.org/entities/FamiliarFollowers/
 type FamiliarFollowers []FamiliarFollower
 
+// FamiliarFollower pairs an account with the people you follow who also follow it.
 // https://docs.joinmastodon.org/entities/FamiliarFollowers/#attributes
 type FamiliarFollower struct {
 	ID       string    `json:"id"`       // The ID of the Account in the database.

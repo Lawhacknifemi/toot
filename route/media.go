@@ -7,5 +7,6 @@ package route
  * https://docs.joinmastodon.org/methods/media/
  ******************************************/
 
+// PostMedia is the route for POST /api/v2/media.
 // https://docs.joinmastodon.org/methods/media/#v2
 const PostMedia = "/api/v2/media"

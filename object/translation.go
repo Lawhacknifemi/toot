@@ -1,5 +1,6 @@
 package object
 
+// Translation represents the machine translation of a status.
 // https://docs.joinmastodon.org/entities/Translation/
 type Translation struct {
 	Content                string `json:"content"`                  // HTML: The translated text of the status.

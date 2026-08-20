@@ -6,5 +6,6 @@ package route
  * https://docs.joinmastodon.org/methods/directory/
  ******************************************/
 
+// GetDirectory is the route for GET /api/v1/directory.
 // https://docs.joinmastodon.org/methods/directory/#get
 const GetDirectory = "/api/v1/directory"

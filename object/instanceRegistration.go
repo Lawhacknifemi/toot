@@ -1,6 +1,6 @@
 package object
 
-// Information about registering for this website.
+// InstanceRegistrations holds information about registering for this website.
 // https://docs.joinmastodon.org/entities/Instance/#registrations
 type InstanceRegistrations struct {
 	Enabled          bool   `json:"enabled"`           // Whether registrations are enabled.

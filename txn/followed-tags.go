@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/followed_tags/
  ******************************************/
 
+// GetFollowedTags is the input for GET /api/v1/followed_tags, which returns []Tag.
 // https://docs.joinmastodon.org/methods/followed_tags/#get
-// GET /api/v1/followed_tags
-// Returns: Array of Tag
 type GetFollowedTags struct {
 	Host    string `header:"Host"`
 	MaxID   string `query:"max_id"`

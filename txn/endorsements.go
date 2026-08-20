@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/endorsements/
  ******************************************/
 
+// GetEndorsements is the input for GET /api/v1/endorsements, which returns []Account.
 // https://docs.joinmastodon.org/methods/endorsements/#get
-// GET /api/v1/endorsements
-// Returns: Array of Account
 type GetEndorsements struct {
 	Host    string `header:"Host"`
 	MaxID   string `query:"max_id"`

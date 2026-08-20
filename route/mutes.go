@@ -6,5 +6,6 @@ package route
  * https://docs.joinmastodon.org/methods/mutes/
  ******************************************/
 
+// GetMutes is the route for GET /api/v1/mutes.
 // https://docs.joinmastodon.org/methods/mutes/#get
 const GetMutes = "/api/v1/mutes"

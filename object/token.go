@@ -1,5 +1,6 @@
 package object
 
+// Token represents an OAuth token used to authorize requests, and to obtain a new one.
 // https://docs.joinmastodon.org/entities/Token/
 type Token struct {
 	AccessToken  string `json:"access_token"`            // An OAuth token to be used for authorization.

@@ -6,10 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/accounts/
  ******************************************/
 
+// PostAccount is the input for POST /api/v1/accounts, which returns Token.
 // https://docs.joinmastodon.org/methods/accounts/#create
-// POST /api/v1/accounts
-// Returns: Token
-// Register an account
 type PostAccount struct {
 	Host      string `header:"Host"`
 	Username  string `form:"username"`
@@ -20,16 +18,14 @@ type PostAccount struct {
 	Reason    string `form:"reason"`
 }
 
+// GetAccount_VerifyCredentials is the input for GET /api/v1/accounts/verify_credentials, which returns CredentialAccount.
 // https://docs.joinmastodon.org/methods/accounts/#verify_credentials
-// GET /api/v1/accounts/verify_credentials
-// Returns: CredentialAccount
-// Test to make sure that the user token works.
 type GetAccount_VerifyCredentials struct {
 	Host string `header:"Host"`
 }
 
+// PatchAccount_UpdateCredentials is the input for PATCH /api/v1/accounts/update_credentials.
 // https://docs.joinmastodon.org/methods/accounts/#update_credentials
-// PATCH /api/v1/accounts/update_credentials
 type PatchAccount_UpdateCredentials struct {
 	Host         string `header:"Host"`
 	DisplayName  string `form:"display_name"`
@@ -41,15 +37,15 @@ type PatchAccount_UpdateCredentials struct {
 	Discoverable bool   `form:"discoverable"`
 }
 
+// GetAccount is the input for GET /api/v1/accounts/:id.
 // https://docs.joinmastodon.org/methods/accounts/#get
-// GET /api/v1/accounts/:id
 type GetAccount struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// GetAccount_Statuses is the input for GET /api/v1/accounts/:id/statuses.
 // https://docs.joinmastodon.org/methods/accounts/#statuses
-// GET /api/v1/accounts/:id/statuses
 type GetAccount_Statuses struct {
 	Host           string `header:"Host"`
 	ID             string `param:"id"`
@@ -75,8 +71,8 @@ func (t GetAccount_Statuses) QueryPage() QueryPage {
 	}
 }
 
+// GetAccount_Followers is the input for GET /api/v1/accounts/:id/followers.
 // https://docs.joinmastodon.org/methods/accounts/#followers
-// GET /api/v1/accounts/:id/followers
 type GetAccount_Followers struct {
 	Host    string `header:"Host"`
 	ID      string `param:"id"`
@@ -97,8 +93,8 @@ func (t GetAccount_Followers) QueryPage() QueryPage {
 	}
 }
 
+// GetAccount_Following is the input for GET /api/v1/accounts/:id/following.
 // https://docs.joinmastodon.org/methods/accounts/#following
-// GET /api/v1/accounts/:id/following
 type GetAccount_Following struct {
 	Host    string `header:"Host"`
 	ID      string `param:"id"`
@@ -119,22 +115,22 @@ func (t GetAccount_Following) QueryPage() QueryPage {
 	}
 }
 
+// GetAccount_FeaturedTags is the input for GET /api/v1/accounts/:id/featured_tags.
 // https://docs.joinmastodon.org/methods/accounts/#featured_tags
-// GET /api/v1/accounts/:id/featured_tags
 type GetAccount_FeaturedTags struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// GetAccount_Lists is the input for GET /api/v1/accounts/:id/lists.
 // https://docs.joinmastodon.org/methods/accounts/#lists
-// GET /api/v1/accounts/:id/lists
 type GetAccount_Lists struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostAccount_Follow is the input for POST /api/v1/accounts/:id/follow.
 // https://docs.joinmastodon.org/methods/accounts/#follow
-// POST /api/v1/accounts/:id/follow
 type PostAccount_Follow struct {
 	Host      string   `header:"Host"`
 	ID        string   `param:"id"`
@@ -143,40 +139,36 @@ type PostAccount_Follow struct {
 	Languages []string `form:"languages"`
 }
 
+// PostAccount_Unfollow is the input for POST /api/v1/accounts/:id/unfollow.
 // https://docs.joinmastodon.org/methods/accounts/#unfollow
-// POST /api/v1/accounts/:id/unfollow
 type PostAccount_Unfollow struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostAccount_RemoveFromFollowers is the input for POST /api/v1/accounts/:id/remove_from_followers, which returns Relationship.
 // https://docs.joinmastodon.org/methods/accounts/#remove_from_followers
-// POST /api/v1/accounts/:id/remove_from_followers
-// Returns: Relationship
 type PostAccount_RemoveFromFollowers struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostAccount_Block is the input for POST /api/v1/accounts/:id/block, which returns Relationship.
 // https://docs.joinmastodon.org/methods/accounts/#block
-// POST /api/v1/accounts/:id/block
-// Returns: Relationship
 type PostAccount_Block struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostAccount_Unblock is the input for POST /api/v1/accounts/:id/unblock, which returns Relationship.
 // https://docs.joinmastodon.org/methods/accounts/#unblock
-// POST /api/v1/accounts/:id/unblock
-// Returns: Relationship
 type PostAccount_Unblock struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostAccount_Mute is the input for POST /api/v1/accounts/:id/mute, which returns Relationship.
 // https://docs.joinmastodon.org/methods/accounts/#mute
-// POST /api/v1/accounts/:id/mute
-// Returns: Relationship
 type PostAccount_Mute struct {
 	Host          string `header:"Host"`
 	ID            string `param:"id"`
@@ -184,58 +176,51 @@ type PostAccount_Mute struct {
 	Duration      bool   `form:"duration"`
 }
 
+// PostAccount_Unmute is the input for POST /api/v1/accounts/:id/unmute, which returns Relationship.
 // https://docs.joinmastodon.org/methods/accounts/#unmute
-// POST /api/v1/accounts/:id/unmute
-// Returns: Relationship
 type PostAccount_Unmute struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostAccount_Pin is the input for POST /api/v1/accounts/:id/pin, which returns Relationship.
 // https://docs.joinmastodon.org/methods/accounts/#pin
-// POST /api/v1/accounts/:id/pin
-// Returns: Relationship
 type PostAccount_Pin struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostAccount_Unpin is the input for POST /api/v1/accounts/:id/unpin, which returns Relationship.
 // https://docs.joinmastodon.org/methods/accounts/#unpin
-// POST /api/v1/accounts/:id/unpin
-// Returns: Relationship
 type PostAccount_Unpin struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostAccount_Note is the input for POST /api/v1/accounts/:id/note, which returns Relationship.
 // https://docs.joinmastodon.org/methods/accounts/#note
-// POST /api/v1/accounts/:id/note
-// Returns: Relationship
 type PostAccount_Note struct {
 	Host    string `header:"Host"`
 	ID      string `param:"id"`
 	Comment string `form:"comment"`
 }
 
+// GetAccount_Relationships is the input for GET /api/v1/accounts/relationships, which returns []Relationships.
 // https://docs.joinmastodon.org/methods/accounts/#relationships
-// GET /api/v1/accounts/relationships
-// Returns: Array of Relationships
 type GetAccount_Relationships struct {
 	Host string   `header:"Host"`
 	IDs  []string `query:"id[]"`
 }
 
+// GetAccount_FamiliarFollowers is the input for GET /api/v1/accounts/:id/familiar_followers, which returns []FamiliarFollower.
 // https://docs.joinmastodon.org/methods/accounts/#familiar_followers
-// GET /api/v1/accounts/:id/familiar_followers
-// Returns: Array of FamiliarFollower
 type GetAccount_FamiliarFollowers struct {
 	Host string `header:"Host"`
 	ID   string `param:"id[]"`
 }
 
+// GetAccount_Search is the input for GET /api/v1/accounts/search, which returns []Account.
 // https://docs.joinmastodon.org/methods/accounts/#search
-// GET /api/v1/accounts/search
-// Returns: Array of Account
 type GetAccount_Search struct {
 	Host      string `header:"Host"`
 	Q         string `query:"q"`
@@ -245,9 +230,8 @@ type GetAccount_Search struct {
 	Following bool   `query:"following"`
 }
 
+// GetAccount_Lookup is the input for GET /api/v1/accounts/lookup, which returns Account.
 // https://docs.joinmastodon.org/methods/accounts/#lookup
-// GET /api/v1/accounts/lookup
-// Returns: Account
 type GetAccount_Lookup struct {
 	Host string `header:"Host"`
 	Acct string `query:"acct"`

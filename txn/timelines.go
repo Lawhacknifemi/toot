@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/timelines/
  ******************************************/
 
+// GetTimeline_Public is the input for GET /api/v1/timelines/public, which returns []Status.
 // https://docs.joinmastodon.org/methods/timelines/#public
-// GET /api/v1/timelines/public
-// Returns: []Status
 type GetTimeline_Public struct {
 	Host      string `header:"Host"`
 	Local     bool   `query:"local"`
@@ -20,9 +19,8 @@ type GetTimeline_Public struct {
 	Limit     int64  `query:"limit"`
 }
 
+// GetTimeline_Hashtag is the input for GET /api/v1/timelines/tag/:hashtag, which returns []Status.
 // https://docs.joinmastodon.org/methods/timelines/#tag
-// GET /api/v1/timelines/tag/:hashtag
-// Returns: []Status
 type GetTimeline_Hashtag struct {
 	Host      string   `header:"Host"`
 	Hashtag   string   `param:"hashtag"`
@@ -49,9 +47,8 @@ func (t GetTimeline_Hashtag) QueryPage() QueryPage {
 	}
 }
 
+// GetTimeline_Home is the input for GET /api/v1/timelines/home, which returns []Status.
 // https://docs.joinmastodon.org/methods/timelines/#home
-// GET /api/v1/timelines/home
-// Returns: []Status
 type GetTimeline_Home struct {
 	Host    string `header:"Host"`
 	MaxID   string `query:"max_id"`
@@ -71,9 +68,8 @@ func (t GetTimeline_Home) QueryPage() QueryPage {
 	}
 }
 
+// GetTimeline_List is the input for GET /api/v1/timelines/list/:list_id, which returns []Status.
 // https://docs.joinmastodon.org/methods/timelines/#list
-// GET /api/v1/timelines/list/:list_id
-// Returns: []Status
 type GetTimeline_List struct {
 	Host    string `header:"Host"`
 	ListID  string `param:"list_id"`

@@ -6,5 +6,6 @@ package route
  * https://docs.joinmastodon.org/methods/custom_emojis/
  ******************************************/
 
+// GetCustomEmojis is the route for GET /api/v1/custom_emojis.
 // https://docs.joinmastodon.org/methods/custom_emojis/#get
 const GetCustomEmojis = "/api/v1/custom_emojis"

@@ -6,17 +6,15 @@ package txn
  * https://docs.joinmastodon.org/methods/markers/
  ******************************************/
 
+// GetMarkers is the input for GET /api/v1/markers, which returns Marker.
 // https://docs.joinmastodon.org/methods/markers/#get
-// GET /api/v1/markers
-// Returns: Marker
 type GetMarkers struct {
 	Host     string   `header:"Host"`
 	Timeline []string `query:"timeline[]"`
 }
 
+// PostMarker is the input for POST /api/v1/markers, which returns Marker.
 // https://docs.joinmastodon.org/methods/markers/#create
-// POST /api/v1/markers
-// Returns: Marker
 type PostMarker struct {
 	Host string `header:"Host"`
 	Home struct {

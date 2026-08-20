@@ -6,10 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/directory/
  ******************************************/
 
+// GetDirectory is the input for GET /api/v1/directory, which returns []Account.
 // https://docs.joinmastodon.org/methods/directory/#get
-// GET /api/v1/directory
-// Returns: Array of Account
-// List accounts visible in the directory.
 type GetDirectory struct {
 	Host   string `header:"Host"`
 	Offset int    `query:"offset"`

@@ -6,57 +6,44 @@ package txn
  * https://docs.joinmastodon.org/methods/instance/
  ******************************************/
 
+// GetInstance is the input for GET /api/v2/instance, which returns Instance.
 // https://docs.joinmastodon.org/methods/instance/#v2
-// GET /api/v2/instance
-// Returns: Instance
 type GetInstance struct {
 	Host string `header:"Host"`
 }
 
+// GetInstance_Peers is the input for GET /api/v1/instance/peers, which returns []string.
 // https://docs.joinmastodon.org/methods/instance/#peers
-// GET /api/v1/instance/peers
-// Returns: []string
-// Domains that this instance is aware of.
 type GetInstance_Peers struct {
 	Host string `header:"Host"`
 }
 
+// GetInstance_Activity is the input for GET /api/v1/instance/activity, which returns []map[string]any.
 // https://docs.joinmastodon.org/methods/instance/#activity
-// GET /api/v1/instance/activity
-// Returns: []map[string]any
-// Instance activity over the last 3 months, binned weekly.
 type GetInstance_Activity struct {
 	Host string `header:"Host"`
 }
 
+// GetInstance_Rules is the input for GET /api/v1/instance/rules, which returns []Rule.
 // https://docs.joinmastodon.org/methods/instance/#rules
-// GET /api/v1/instance/rules
-// Returns: []Rule
-// Rules that the users of this service should follow.
 type GetInstance_Rules struct {
 	Host string `header:"Host"`
 }
 
+// GetInstance_DomainBlocks is the input for GET /api/v1/instance/domain_blocks, which returns []DomainBlock.
 // https://docs.joinmastodon.org/methods/instance/#domain_blocks
-// GET /api/v1/instance/domain_blocks
-// Returns: []DomainBlock
-// Obtain a list of domains that have been blocked.
 type GetInstance_DomainBlocks struct {
 	Host string `header:"Host"`
 }
 
+// GetInstance_ExtendedDescription is the input for GET /api/v1/instance/extended_description, which returns ExtendedDescription.
 // https://docs.joinmastodon.org/methods/instance/#extended_description
-// GET /api/v1/instance/extended_description
-// Returns: ExtendedDescription
-// Obtain an extended description of this server
 type GetInstance_ExtendedDescription struct {
 	Host string `header:"Host"`
 }
 
+// GetInstance_V1 is the input for GET /api/v1/instance, which returns Instance_V1.
 // https://docs.joinmastodon.org/methods/instance/#v1
-// GET /api/v1/instance
-// Returns: Instance_V1
-// Obtain general information about the server.
 type GetInstance_V1 struct {
 	Host string `header:"Host"`
 }

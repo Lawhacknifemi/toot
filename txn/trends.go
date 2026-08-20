@@ -6,27 +6,24 @@ package txn
  * https://docs.joinmastodon.org/methods/trends/
  ******************************************/
 
+// GetTrends is the input for GET /api/v1/trends, which returns []Tag.
 // https://docs.joinmastodon.org/methods/trends/#tags
-// GET /api/v1/trends
-// Returns: []Tag
 type GetTrends struct {
 	Host   string `header:"Host"`
 	Limit  int    `query:"limit"`  // Maximum number of results to return. Defaults to 10 tags. Max 20 tags.
 	Offset int    `query:"offset"` // Skip the first n results.
 }
 
+// GetTrends_Statuses is the input for GET /api/v1/trends/statuses, which returns []Status.
 // https://docs.joinmastodon.org/methods/trends/#statuses
-// GET /api/v1/trends/statuses
-// Returns: []Status
 type GetTrends_Statuses struct {
 	Host   string `header:"Host"`
 	Limit  int    `query:"limit"`  // Maximum number of results to return. Defaults to 10 tags. Max 20 tags.
 	Offset int    `query:"offset"` // Skip the first n results.
 }
 
+// GetTrends_Links is the input for GET /api/v1/trends/links, which returns []Link.
 // https://docs.joinmastodon.org/methods/trends/#links
-// GET /api/v1/trends/links
-// Returns: []Link
 type GetTrends_Links struct {
 	Host   string `header:"Host"`
 	Limit  int    `query:"limit"`  // Maximum number of results to return. Defaults to 10 tags. Max 20 tags.

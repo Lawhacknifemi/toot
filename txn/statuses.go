@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/statuses/
  ******************************************/
 
+// PostStatus is the input for POST /api/v1/statuses, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#create
-// POST /api/v1/statuses
-// Returns: Status
 type PostStatus struct {
 	Host     string   `header:"Host"`
 	Status   string   `form:"status"`
@@ -28,41 +27,37 @@ type PostStatus struct {
 	ScheduledAt string `form:"scheduled_at"` // ISO 8601 Datetime
 }
 
+// GetStatus is the input for GET /api/v1/statuses/:id, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#get
-// GET /api/v1/statuses/:id
-// Returns: Status
 type GetStatus struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// DeleteStatus is the input for DELETE /api/v1/statuses/:id.
 // https://docs.joinmastodon.org/methods/statuses/#delete
-// DELETE /api/v1/statuses/:id
 type DeleteStatus struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// GetStatus_Context is the input for GET /api/v1/statuses/:id/context, which returns Context.
 // https://docs.joinmastodon.org/methods/statuses/#context
-// GET /api/v1/statuses/:id/context
-// Returns: Context
 type GetStatus_Context struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostStatus_Translate is the input for POST /api/v1/statuses/:id/translate, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#translate
-// POST /api/v1/statuses/:id/translate
-// Returns: Status
 type PostStatus_Translate struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 	Lang string `form:"lang"`
 }
 
+// GetStatus_RebloggedBy is the input for GET /api/v1/statuses/:id/reblogged_by, which returns []Account.
 // https://docs.joinmastodon.org/methods/statuses/#reblogged_by
-// GET /api/v1/statuses/:id/reblogged_by
-// Returns: []Account
 type GetStatus_RebloggedBy struct {
 	Host    string `header:"Host"`
 	ID      string `param:"id"`
@@ -83,9 +78,8 @@ func (t GetStatus_RebloggedBy) QueryPage() QueryPage {
 	}
 }
 
+// GetStatus_FavouritedBy is the input for GET /api/v1/statuses/:id/favourited_by, which returns []Account.
 // https://docs.joinmastodon.org/methods/statuses/#favourited_by
-// GET /api/v1/statuses/:id/favourited_by
-// Returns: []Account
 type GetStatus_FavouritedBy struct {
 	Host    string `header:"Host"`
 	ID      string `param:"id"`
@@ -106,90 +100,79 @@ func (t GetStatus_FavouritedBy) QueryPage() QueryPage {
 	}
 }
 
+// PostStatus_Favourite is the input for POST /api/v1/statuses/:id/favourite, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#favourite
-// POST /api/v1/statuses/:id/favourite
-// Returns: Status
 type PostStatus_Favourite struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostStatus_Unfavourite is the input for POST /api/v1/statuses/:id/unfavourite, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#unfavourite
-// POST /api/v1/statuses/:id/unfavourite
-// Returns: Status
 type PostStatus_Unfavourite struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostStatus_Reblog is the input for POST /api/v1/statuses/:id/reblog, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#reblog
-// POST /api/v1/statuses/:id/reblog
-// Returns: Status
 type PostStatus_Reblog struct {
 	Host       string `header:"Host"`
 	ID         string `param:"id"`
 	Visibility string `form:"visibility"` // [public | unlisted | private]
 }
 
+// PostStatus_Unreblog is the input for POST /api/v1/statuses/:id/unreblog, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#unreblog
-// POST /api/v1/statuses/:id/unreblog
-// Returns: Status
 type PostStatus_Unreblog struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostStatus_Bookmark is the input for POST /api/v1/statuses/:id/bookmark, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#bookmark
-// POST /api/v1/statuses/:id/bookmark
-// Returns: Status
 type PostStatus_Bookmark struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostStatus_Unbookmark is the input for POST /api/v1/statuses/:id/unbookmark, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#unbookmark
-// POST /api/v1/statuses/:id/unbookmark
-// Returns: Status
 type PostStatus_Unbookmark struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostStatus_Mute is the input for POST /api/v1/statuses/:id/mute, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#mute
-// POST /api/v1/statuses/:id/mute
-// Returns: Status
 type PostStatus_Mute struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostStatus_Unmute is the input for POST /api/v1/statuses/:id/unmute, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#unmute
-// POST /api/v1/statuses/:id/unmute
-// Returns: Status
 type PostStatus_Unmute struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostStatus_Pin is the input for POST /api/v1/statuses/:id/pin, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#pin
-// POST /api/v1/statuses/:id/pin
-// Returns: Status
 type PostStatus_Pin struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostStatus_Unpin is the input for POST /api/v1/statuses/:id/unpin, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#unpin
-// POST /api/v1/statuses/:id/unpin
-// Returns: Status
 type PostStatus_Unpin struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PutStatus is the input for PUT /api/v1/statuses/:id, which returns Status.
 // https://docs.joinmastodon.org/methods/statuses/#edit
-// PUT /api/v1/statuses/:id
-// Returns: Status
 type PutStatus struct {
 	Host        string   `header:"Host"`
 	ID          string   `param:"id"`
@@ -207,17 +190,15 @@ type PutStatus struct {
 	} `form:"poll"`
 }
 
+// GetStatus_History is the input for GET /api/v1/statuses/:id/history, which returns []StatusEdit.
 // https://docs.joinmastodon.org/methods/statuses/#history
-// GET /api/v1/statuses/:id/history
-// Returns: []StatusEdit
 type GetStatus_History struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// GetStatus_Source is the input for GET /api/v1/statuses/:id/source, which returns StatusSource.
 // https://docs.joinmastodon.org/methods/statuses/#source
-// GET /api/v1/statuses/:id/source
-// Returns: StatusSource
 type GetStatus_Source struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`

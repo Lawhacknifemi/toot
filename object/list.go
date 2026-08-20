@@ -8,11 +8,11 @@ type List struct {
 	RepliesPolicy string `json:"replies_policy"` // Which replies should be shown in the list. [followed | list | none]
 }
 
-// Show replies to any followed user
+// ListRepliesPolicyFollowed shows replies to any followed user.
 const ListRepliesPolicyFollowed = "followed"
 
-// Show replies to members of the list
+// ListRepliesPolicyList shows replies to members of the list.
 const ListRepliesPolicyList = "list"
 
-// Show replies to no one
+// ListRepliesPolicyNone shows replies to no one.
 const ListRepliesPolicyNone = "none"

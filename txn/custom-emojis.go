@@ -6,8 +6,6 @@ package txn
  * https://docs.joinmastodon.org/methods/custom_emojis/
  ******************************************/
 
+// GetCustomEmojis is the input for GET /api/v1/custom_emojis, which returns []CustomEmoji.
 // https://docs.joinmastodon.org/methods/custom_emojis/#get
-// GET /api/v1/custom_emojis
-// Returns: Array of CustomEmoji
-// Returns custom emojis that are available on the server.
 type GetCustomEmojis struct{}

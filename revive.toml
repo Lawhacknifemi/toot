@@ -1,0 +1,38 @@
+# revive configuration for github.com/benpate/toot
+#
+# This file must enumerate the DEFAULT rule set explicitly. Naming even one rule
+# in a config replaces revive's built-in defaults entirely rather than adding to
+# them, so a config that mentions only one rule silently switches every other rule
+# off. Keep this list in sync when revive's defaults change.
+#
+# The only rule omitted is var-naming. Every exported name in this module is
+# deliberately shaped as <Verb><Entity>_<Subresource> -- GetAccount_Statuses,
+# PutAnnouncement_Reaction -- so that one name maps onto one Mastodon API endpoint
+# and reads identically in the toot, route, scope, and txn packages. Renaming 341
+# symbols to satisfy the underscore check would break every consumer and lose that
+# correspondence. revive has no switch for the underscore check alone
+# (skipPackageNameChecks and skipInitialismNameChecks do not cover it), so the whole
+# rule has to go, and its initialism and receiver-name checks go with it.
+
+[rule.blank-imports]
+[rule.context-as-argument]
+[rule.context-keys-type]
+[rule.dot-imports]
+[rule.empty-block]
+[rule.error-naming]
+[rule.error-return]
+[rule.error-strings]
+[rule.errorf]
+[rule.exported]
+[rule.increment-decrement]
+[rule.indent-error-flow]
+[rule.package-comments]
+[rule.range]
+[rule.receiver-naming]
+[rule.redefines-builtin-id]
+[rule.superfluous-else]
+[rule.time-naming]
+[rule.unexported-return]
+[rule.unreachable-code]
+[rule.unused-parameter]
+[rule.var-declaration]

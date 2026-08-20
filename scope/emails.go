@@ -6,5 +6,6 @@ package scope
  * https://docs.joinmastodon.org/methods/emails/
  ******************************************/
 
+// PostEmailConfirmation is the OAuth scope required by POST /api/v1/email/confirmation.
 // https://docs.joinmastodon.org/methods/emails/#confirmation
 const PostEmailConfirmation = Private

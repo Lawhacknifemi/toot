@@ -1,5 +1,6 @@
 package object
 
+// AccountSource holds the source values of a profile, as the account owner typed them, for editing.
 // https://docs.joinmastodon.org/entities/Account/#source
 type AccountSource struct {
 	Note                string         `json:"note"`                  // Profile bio, in plain-text instead of in HTML.

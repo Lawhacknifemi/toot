@@ -1,5 +1,6 @@
 package object
 
+// AnnouncementStatus represents a status linked from within an announcement.
 // https://docs.joinmastodon.org/entities/Announcement/#Status
 type AnnouncementStatus struct {
 	ID  string `json:"id"`  // The ID of an attached Status in the database.

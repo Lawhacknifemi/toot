@@ -6,36 +6,32 @@ package txn
  * https://docs.joinmastodon.org/methods/announcements/
  ******************************************/
 
+// GetAnnouncements is the input for GET /api/v1/announcements, which returns []Announcement.
 // https://docs.joinmastodon.org/methods/announcements/#get
-// GET /api/v1/announcements
-// Returns: Array of Announcement
 type GetAnnouncements struct {
 	Host          string `header:"Host"`
 	Authorization string `header:"Authorization"`
 	WithDismissed bool   `query:"with_dismissed"`
 }
 
+// PostAnnouncement_Dismiss is the input for POST /api/v1/announcements/:id/dismiss, which returns an empty object.
 // https://docs.joinmastodon.org/methods/announcements/#dismiss
-// POST /api/v1/announcements/:id/dismiss
-// Returns: Empty struct
 type PostAnnouncement_Dismiss struct {
 	Host          string `header:"Host"`
 	Authorization string `header:"Authorization"`
 	ID            string `param:"id"`
 }
 
+// PutAnnouncement_Reaction is the input for PUT /api/v1/announcements/:id/reactions/:name, which returns an empty object.
 // https://docs.joinmastodon.org/methods/announcements/#put-reactions
-// PUT /api/v1/announcements/:id/reactions/:name
-// Returns: Empty struct
 type PutAnnouncement_Reaction struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 	Name string `param:"name"`
 }
 
+// DeleteAnnouncement_Reaction is the input for DELETE /api/v1/announcements/:id/reactions/:name, which returns an empty object.
 // https://docs.joinmastodon.org/methods/announcements/#delete-reactions
-// DELETE /api/v1/announcements/:id/reactions/:name
-// Returns: Empty struct
 type DeleteAnnouncement_Reaction struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`

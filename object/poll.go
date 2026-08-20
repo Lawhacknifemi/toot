@@ -15,6 +15,7 @@ type Poll struct {
 	OwnVotes    []int         `json:"own_votes"`              // When called with a user token, which options has the authorized user chosen? Contains an array of index values for options.
 }
 
+// PollOption represents one choice in a poll, and its vote count.
 // https://docs.joinmastodon.org/entities/Poll/#Option
 type PollOption struct {
 	Title      string `json:"title"`       // The text value of the poll option.

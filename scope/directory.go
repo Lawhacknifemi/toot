@@ -6,5 +6,6 @@ package scope
  * https://docs.joinmastodon.org/methods/directory/
  ******************************************/
 
+// GetDirectory is the OAuth scope required by GET /api/v1/directory.
 // https://docs.joinmastodon.org/methods/directory/#get
 const GetDirectory = Public

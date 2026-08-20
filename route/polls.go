@@ -7,8 +7,10 @@ package route
 * https://docs.joinmastodon.org/methods/polls/
 ******************************************/
 
+// GetPoll is the route for GET /api/v1/polls/:id.
 // https://docs.joinmastodon.org/methods/polls/#get
 const GetPoll = "/api/v1/polls/:id"
 
+// PostPoll_Votes is the route for POST /api/v1/polls/:id/votes.
 // https://docs.joinmastodon.org/methods/polls/#vote
 const PostPoll_Votes = "/api/v1/polls/:id/votes"

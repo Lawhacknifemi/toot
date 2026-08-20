@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/mutes/
  ******************************************/
 
+// GetMutes is the input for GET /api/v1/mutes, which returns []Account.
 // https://docs.joinmastodon.org/methods/mutes/#get
-// GET /api/v1/mutes
-// Returns: Array of Account
 type GetMutes struct {
 	Host    string `header:"Host"`
 	MaxID   string `query:"max_id"`

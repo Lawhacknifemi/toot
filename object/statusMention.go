@@ -1,6 +1,6 @@
 package object
 
-// Mentions of users within the status content.
+// StatusMention represents an account mentioned within the content of a status.
 // https://docs.joinmastodon.org/entities/Status/#mentions
 type StatusMention struct {
 	ID       string `json:"id"`       // The account ID of the mentioned user.

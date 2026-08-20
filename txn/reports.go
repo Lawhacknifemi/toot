@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/reports/
  ******************************************/
 
+// PostReport is the input for POST /api/v1/reports, which returns Report.
 // https://docs.joinmastodon.org/methods/reports/#post
-// POST /api/v1/reports
-// Returns: Report
 type PostReport struct {
 	Host      string   `header:"Host"`
 	AccountID string   `form:"account_id"`

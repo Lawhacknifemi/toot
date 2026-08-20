@@ -6,5 +6,6 @@ package scope
  * https://docs.joinmastodon.org/methods/mutes/
  ******************************************/
 
+// GetMutes is the OAuth scope required by GET /api/v1/mutes.
 // https://docs.joinmastodon.org/methods/mutes/#get
 const GetMutes = ReadMutes

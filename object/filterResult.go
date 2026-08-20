@@ -1,5 +1,6 @@
 package object
 
+// FilterResult represents a filter that matched a status, and the keywords that matched it.
 // https://docs.joinmastodon.org/entities/FilterResult/
 type FilterResult struct {
 	Filter         Filter   `json:"filter"`                    // The filter that was matched.

@@ -7,19 +7,15 @@ package txn
 * https://docs.joinmastodon.org/methods/polls/
 ******************************************/
 
+// GetPoll is the input for GET /api/v1/polls/:id, which returns Poll.
 // https://docs.joinmastodon.org/methods/polls/#get
-// GET /api/v1/polls/:id
-// Returns: Poll
-// View a Poll
 type GetPoll struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostPoll_Votes is the input for POST /api/v1/polls/:id/votes, which returns Poll.
 // https://docs.joinmastodon.org/methods/polls/#vote
-// POST /api/v1/polls/:id/votes
-// Returns: Poll
-// Vote on a Poll
 type PostPoll_Votes struct {
 	Host    string `header:"Host"`
 	ID      string `param:"id"`

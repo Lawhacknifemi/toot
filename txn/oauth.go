@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/oauth/
 ******************************************/
 
+// GetOAuth_Authorize is the input for GET /oauth/authorize, which returns Authorization code.
 // https://docs.joinmastodon.org/methods/oauth/#authorize
-// GET /oauth/authorize
-// Returns: Authorization code
 type GetOAuth_Authorize struct {
 	Host         string `header:"Host"`
 	ResponseType string `query:"response_type"`
@@ -19,10 +18,8 @@ type GetOAuth_Authorize struct {
 	Language     string `query:"language"`
 }
 
+// PostOAuth_Token is the input for POST /oauth/token, which returns Token.
 // https://docs.joinmastodon.org/methods/oauth/#token
-// POST /oauth/token
-// Returns: Token
-// Obtain an access token, to be used during API calls that are not public
 type PostOAuth_Token struct {
 	Host         string `header:"Host"`
 	GrantType    string `form:"grant_type"`
@@ -33,10 +30,8 @@ type PostOAuth_Token struct {
 	Scope        string `form:"scope"`
 }
 
+// PostOAuth_Revoke is the input for POST /oauth/revoke, which returns an empty object.
 // https://docs.joinmastodon.org/methods/oauth/#revoke
-// POST /oauth/revoke
-// Returns: Empty struct
-// Revoke an access token to make it no longer valid for use
 type PostOAuth_Revoke struct {
 	Host         string `header:"Host"`
 	ClientID     string `form:"client_id"`

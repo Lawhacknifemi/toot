@@ -6,5 +6,6 @@ package route
  * https://docs.joinmastodon.org/methods/bookmarks/
  ******************************************/
 
+// GetBookmarks is the route for GET /api/v1/bookmarks.
 // https://docs.joinmastodon.org/methods/bookmarks/#get
 const GetBookmarks = "/api/v1/bookmarks"

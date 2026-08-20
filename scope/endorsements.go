@@ -6,5 +6,6 @@ package scope
  * https://docs.joinmastodon.org/methods/endorsements/
  ******************************************/
 
+// GetEndorsements is the OAuth scope required by GET /api/v1/endorsements.
 // https://docs.joinmastodon.org/methods/endorsements/#get
 const GetEndorsements = ReadAccounts

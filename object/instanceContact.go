@@ -1,6 +1,6 @@
 package object
 
-// Hints related to contacting a representative of the website.
+// InstanceContact holds hints related to contacting a representative of the website.
 // https://docs.joinmastodon.org/entities/Instance/#contact
 type InstanceContact struct {
 	Email   string  `json:"email"`   // An email address that can be messaged regarding inquiries or issues.

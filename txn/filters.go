@@ -6,25 +6,21 @@ package txn
  * https://docs.joinmastodon.org/methods/filters/
  ******************************************/
 
+// GetFilters is the input for GET /api/v2/filters, which returns []Filter.
 // https://docs.joinmastodon.org/methods/filters/#get
-// GET /api/v2/filters
-// Returns: Array of Filter
 type GetFilters struct {
 	Host string `header:"Host"`
 }
 
+// GetFilter is the input for GET /api/v2/filters/:id, which returns Filter.
 // https://docs.joinmastodon.org/methods/filters/#get-one
-// GET /api/v2/filters/:id
-// Returns: Filter
 type GetFilter struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostFilter is the input for POST /api/v2/filters, which returns Filter.
 // https://docs.joinmastodon.org/methods/filters/#create
-// POST /api/v2/filters
-// Returns: Filter
-// Create a filter group with the given parameters.
 type PostFilter struct {
 	Host               string   `header:"Host"`
 	Title              string   `form:"title"`
@@ -38,10 +34,8 @@ type PostFilter struct {
 	} `form:"keywords_attributes"`
 }
 
+// PutFilter is the input for PUT /api/v2/filters/:id, which returns Filter.
 // https://docs.joinmastodon.org/methods/filters/#update
-// PUT /api/v2/filters/:id
-// Returns: Filter
-// Update a filter group with the given parameters.
 type PutFilter struct {
 	Host               string   `header:"Host"`
 	ID                 string   `param:"id"`           // The ID of the Filter in the database.
@@ -58,28 +52,22 @@ type PutFilter struct {
 	} `form:"keywords_attributes"`
 }
 
+// DeleteFilter is the input for DELETE /api/v2/filters/:id, which returns an empty object.
 // https://docs.joinmastodon.org/methods/filters/#delete
-// DELETE /api/v2/filters/:id
-// Returns: Empty object
-// Delete a filter group.
 type DeleteFilter struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"` // The ID of the Filter in the database.
 }
 
+// GetFilter_Keywords is the input for GET /api/v2/filters/:filter_id/keywords, which returns []FilterKeyword.
 // https://docs.joinmastodon.org/methods/filters/#keywords-get
-// GET /api/v2/filters/:filter_id/keywords
-// Returns: Array of FilterKeyword
-// List all keywords attached to the current filter group.
 type GetFilter_Keywords struct {
 	Host     string `header:"Host"`
 	FilterID string `param:"filter_id"` // The ID of the Filter in the database.
 }
 
+// PostFilter_Keyword is the input for POST /api/v2/filters/:filter_id/keywords, which returns FilterKeyword.
 // https://docs.joinmastodon.org/methods/filters/#keywords-create
-// POST /api/v2/filters/:filter_id/keywords
-// Returns: FilterKeyword
-// Add the given keyword to the specified filter group
 type PostFilter_Keyword struct {
 	Host      string `header:"Host"`
 	FilterID  string `param:"filter_id"` // The ID of the Filter in the database.
@@ -87,19 +75,15 @@ type PostFilter_Keyword struct {
 	WholeWord bool   `form:"whole_word"` // Whether the keyword should consider word boundaries.
 }
 
+// GetFilter_Keyword is the input for GET /api/v2/filters/keywords/:id, which returns FilterKeyword.
 // https://docs.joinmastodon.org/methods/filters/#keywords-get-one
-// GET /api/v2/filters/keywords/:id
-// Returns: FilterKeyword
-// Get one filter keyword by the given id
 type GetFilter_Keyword struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"` // The ID of the FilterKeyword in the database.
 }
 
+// PutFilter_Keyword is the input for PUT /api/v2/filters/keywords/:id, which returns FilterKeyword.
 // https://docs.joinmastodon.org/methods/filters/#keywords-update
-// PUT /api/v2/filters/keywords/:id
-// Returns: FilterKeyword
-// Update the given filter keyword.
 type PutFilter_Keyword struct {
 	Host      string `header:"Host"`
 	ID        string `param:"id"`        // The ID of the FilterKeyword in the database.
@@ -107,69 +91,56 @@ type PutFilter_Keyword struct {
 	WholeWord bool   `form:"whole_word"` // Whether the keyword should consider word boundaries.
 }
 
+// DeleteFilter_Keyword is the input for DELETE /api/v2/filters/keywords/:id, which returns an empty object.
 // https://docs.joinmastodon.org/methods/filters/#keywords-delete
-// DELETE /api/v2/filters/keywords/:id
-// Returns: Empty object
-// Delete the given filter keyword.
 type DeleteFilter_Keyword struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"` // The ID of the FilterKeyword in the database.
 }
 
+// GetFilter_Statuses is the input for GET /api/v2/filters/:filter_id/statuses, which returns []FilterStatus.
 // https://docs.joinmastodon.org/methods/filters/#statuses-get
-// GET /api/v2/filters/:filter_id/statuses
-// Returns: Array of FilterStatus
-// Obtain a list of all status filters within this filter group.
 type GetFilter_Statuses struct {
 	Host     string `header:"Host"`
 	FilterID string `param:"filter_id"` // The ID of the Filter in the database.
 }
 
+// PostFilter_Status is the input for POST /api/v2/filters/:filter_id/statuses, which returns FilterStatus.
 // https://docs.joinmastodon.org/methods/filters/#statuses-add
-// POST /api/v2/filters/:filter_id/statuses
-// Returns: FilterStatus
-// Add a status filter to the current filter group.
 type PostFilter_Status struct {
 	Host     string `header:"Host"`
 	FilterID string `param:"filter_id"` // The ID of the Filter in the database.
 }
 
+// GetFilter_Status is the input for GET /api/v2/filters/statuses/:id, which returns FilterStatus.
 // https://docs.joinmastodon.org/methods/filters/#statuses-get-one
-// GET /api/v2/filters/statuses/:id
-// Returns: FilterStatus
-// Obtain a single status filter.
 type GetFilter_Status struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"` // The ID of the FilterStatus in the database.
 }
 
+// DeleteFilter_Status is the input for DELETE /api/v2/filters/statuses/:id, which returns FilterStatus.
 // https://docs.joinmastodon.org/methods/filters/#statuses-remove
-// DELETE /api/v2/filters/statuses/:id
-// Returns: FilterStatus
-// Remove a status filter from the current filter group.
 type DeleteFilter_Status struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"` // The ID of the FilterStatus in the database.
 }
 
+// GetFilters_V1 is the input for GET /api/v1/filters.
 // https://docs.joinmastodon.org/methods/filters/#get-v1
-// GET /api/v1/filters
-// Returns List of V1::"Filter"
 type GetFilters_V1 struct {
 	Host string `header:"Host"`
 }
 
+// GetFilter_V1 is the input for GET /api/v1/filters/:id.
 // https://docs.joinmastodon.org/methods/filters/#get-one-v1
-// GET /api/v1/filters/:id
-// Returns V1::"Filter"
 type GetFilter_V1 struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostFilter_V1 is the input for POST /api/v1/filters.
 // https://docs.joinmastodon.org/methods/filters/#create-v1
-// POST /api/v1/filters
-// Returns V1::"Filter"
 type PostFilter_V1 struct {
 	Host         string   `header:"Host"`
 	Phrase       string   `form:"phrase"`
@@ -179,9 +150,8 @@ type PostFilter_V1 struct {
 	ExpiresIn    int      `form:"expires_in"`
 }
 
+// PutFilter_V1 is the input for PUT /api/v1/filters/:id.
 // https://docs.joinmastodon.org/methods/filters/#update-v1
-// PUT /api/v1/filters/:id
-// Returns V1::"Filter"
 type PutFilter_V1 struct {
 	Host         string   `header:"Host"`
 	ID           string   `param:"id"`
@@ -192,9 +162,8 @@ type PutFilter_V1 struct {
 	ExpiresIn    int      `form:"expires_in"`
 }
 
+// DeleteFilter_V1 is the input for DELETE /api/v1/filters/:id.
 // https://docs.joinmastodon.org/methods/filters/#delete-v1
-// DELETE /api/v1/filters/:id
-// Returns Empty object
 type DeleteFilter_V1 struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`

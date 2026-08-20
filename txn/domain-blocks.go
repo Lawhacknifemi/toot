@@ -6,9 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/domain_blocks/
  ******************************************/
 
+// GetDomainBlocks is the input for GET /api/v1/domain_blocks, which returns []String.
 // https://docs.joinmastodon.org/methods/domain_blocks/#get
-// GET /api/v1/domain_blocks
-// Returns: Array of String
 type GetDomainBlocks struct {
 	Host          string `header:"Host"`
 	Authorization string `header:"Authorization"`
@@ -29,17 +28,15 @@ func (t GetDomainBlocks) QueryPage() QueryPage {
 	}
 }
 
+// PostDomainBlock is the input for POST /api/v1/domain_blocks, which returns an empty object.
 // https://docs.joinmastodon.org/methods/domain_blocks/#block
-// POST /api/v1/domain_blocks
-// Returns: Empty struct
 type PostDomainBlock struct {
 	Host   string `header:"Host"`
 	Domain string `form:"domain"`
 }
 
+// DeleteDomainBlock is the input for DELETE /api/v1/domain_blocks, which returns an empty object.
 // https://docs.joinmastodon.org/methods/domain_blocks/#unblock
-// DELETE /api/v1/domain_blocks
-// Returns: Empty struct
 type DeleteDomainBlock struct {
 	Host   string `header:"Host"`
 	Domain string `form:"domain"`

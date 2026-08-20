@@ -6,25 +6,22 @@ package txn
  * https://docs.joinmastodon.org/methods/tags/
  ******************************************/
 
+// GetTag is the input for GET /api/v1/tags/:id, which returns Tag.
 // https://docs.joinmastodon.org/methods/tags/#get
-// GET /api/v1/tags/:id
-// Returns: Tag
 type GetTag struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostTag_Follow is the input for POST /api/v1/tags/:id/follow, which returns Tag.
 // https://docs.joinmastodon.org/methods/tags/#follow
-// POST /api/v1/tags/:id/follow
-// Returns: Tag
 type PostTag_Follow struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`
 }
 
+// PostTag_Unfollow is the input for POST /api/v1/tags/:id/unfollow, which returns Tag.
 // https://docs.joinmastodon.org/methods/tags/#unfollow
-// POST /api/v1/tags/:id/unfollow
-// Returns: Tag
 type PostTag_Unfollow struct {
 	Host string `header:"Host"`
 	ID   string `param:"id"`

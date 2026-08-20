@@ -6,5 +6,6 @@ package route
 * https://docs.joinmastodon.org/methods/preferences/
 ******************************************/
 
+// GetPreferences is the route for GET /api/v1/preferences.
 // https://docs.joinmastodon.org/methods/preferences/#get
 const GetPreferences = "/api/v1/preferences"

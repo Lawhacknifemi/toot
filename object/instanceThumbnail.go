@@ -1,5 +1,6 @@
 package object
 
+// InstanceThumbnail represents the image used to represent this instance.
 // https://docs.joinmastodon.org/entities/Instance/#thumbnail
 type InstanceThumbnail struct {
 	URL      string                    `json:"url"`                // The URL for the thumbnail image.
@@ -7,6 +8,7 @@ type InstanceThumbnail struct {
 	Versions InstanceThumbnailVersions `json:"versions,omitempty"` // Links to scaled resolution images, for high DPI screens.
 }
 
+// InstanceThumbnailVersions holds the links to an instance thumbnail at each pixel density.
 // https://docs.joinmastodon.org/entities/Instance/#thumbnail-versions
 type InstanceThumbnailVersions struct {
 	At1X string `json:"@1x,omitempty"` // The URL for the thumbnail image at 1x resolution.

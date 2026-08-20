@@ -1,5 +1,6 @@
 package object
 
+// Tag represents a hashtag, and how often it has been used recently.
 // https://docs.joinmastodon.org/entities/Tag/
 type Tag struct {
 	Name      string       `json:"name"`      //  The value of the hashtag after the # sign.

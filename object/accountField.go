@@ -1,5 +1,6 @@
 package object
 
+// AccountField represents one name/value pair from the metadata table on a profile.
 // https://docs.joinmastodon.org/entities/Account/#Field
 type AccountField struct {
 	Name       string `json:"name"`                  // The key of a given field’s key-value pair.

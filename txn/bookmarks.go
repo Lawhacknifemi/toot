@@ -6,10 +6,8 @@ package txn
  * https://docs.joinmastodon.org/methods/bookmarks/
  ******************************************/
 
+// GetBookmarks is the input for GET /api/v1/bookmarks, which returns []Status.
 // https://docs.joinmastodon.org/methods/bookmarks/#get
-// GET /api/v1/bookmarks
-// Returns: Array of Status
-// Statuses the user has bookmarked.
 type GetBookmarks struct {
 	Host    string `header:"Host"`
 	MaxID   string `query:"max_id"`
