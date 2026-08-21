@@ -170,6 +170,12 @@ type API[AuthToken ScopesGetter] struct {
 	DeleteProfile_Avatar func(AuthToken, txn.DeleteProfile_Avatar) (object.Account, error)
 	DeleteProfile_Header func(AuthToken, txn.DeleteProfile_Header) (object.Account, error)
 
+	// https://docs.joinmastodon.org/methods/push/
+	PostPushSubscription   func(AuthToken, txn.PostPushSubscription) (object.WebPushSubscription, error)
+	GetPushSubscription    func(AuthToken, txn.GetPushSubscription) (object.WebPushSubscription, error)
+	PutPushSubscription    func(AuthToken, txn.PutPushSubscription) (object.WebPushSubscription, error)
+	DeletePushSubscription func(AuthToken, txn.DeletePushSubscription) (struct{}, error)
+
 	// https://docs.joinmastodon.org/methods/reports/
 	PostReport func(AuthToken, txn.PostReport) (object.Report, error)
 
