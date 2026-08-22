@@ -34,4 +34,7 @@ type Status struct {
 	Bookmarked         bool               `json:"bookmarked"`                       // If the current token has an authorized user: Have you bookmarked this status?
 	Pinned             bool               `json:"pinned"`                           // If the current token has an authorized user: Have you pinned this status? Only appears if the status is pinnable.
 	Filtered           []FilterResult     `json:"filtered"`                         // If the current token has an authorized user: The filter and keywords that matched this status.
+	QuotesCount        int                `json:"quotes_count"`                     // How many quotes this status has received.
+	Quote              *Quote             `json:"quote,omitempty"`
+	QuoteApproval      *QuoteApproval     `json:"quote_approval,omitempty"`
 }
