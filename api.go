@@ -162,6 +162,8 @@ type API[AuthToken ScopesGetter] struct {
 	GetNotifications_UnreadCount func(AuthToken, txn.GetNotifications_UnreadCount) (object.NotificationsUnreadCount, error)
 	PostNotifications_Clear      func(AuthToken, txn.PostNotifications_Clear) (object.Notification, error)
 	PostNotification_Dismiss     func(AuthToken, txn.PostNotification_Dismiss) (object.Notification, error)
+	GetNotificationPolicy        func(AuthToken, txn.GetNotificationPolicy) (object.NotificationPolicy, error)
+	PatchNotificationPolicy      func(AuthToken, txn.PatchNotificationPolicy) (object.NotificationPolicy, error)
 
 	// https://docs.joinmastodon.org/methods/oauth/
 	GetOAuth_Authorize func(AuthToken, txn.GetOAuth_Authorize) (struct{}, error)

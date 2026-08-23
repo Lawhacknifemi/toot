@@ -24,3 +24,9 @@ const PostNotification_Dismiss = WriteNotifications
 
 // https://docs.joinmastodon.org/methods/notifications/#unread-count
 const GetNotifications_UnreadCount = ReadNotifications
+
+// https://docs.joinmastodon.org/methods/notifications/#get-policy
+const GetNotificationPolicy = ReadNotifications
+
+// https://docs.joinmastodon.org/methods/notifications/#update-policy
+const PatchNotificationPolicy = WriteNotifications

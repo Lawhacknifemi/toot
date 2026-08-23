@@ -24,3 +24,9 @@ const PostNotification_Dismiss = "/api/v1/notifications/dismiss"
 
 // https://docs.joinmastodon.org/methods/notifications/#unread-count
 const GetNotifications_UnreadCount = "/api/v1/notifications/unread_count"
+
+// https://docs.joinmastodon.org/methods/notifications/#get-policy
+const GetNotificationPolicy = "/api/v2/notifications/policy"
+
+// https://docs.joinmastodon.org/methods/notifications/#update-policy
+const PatchNotificationPolicy = "/api/v2/notifications/policy"

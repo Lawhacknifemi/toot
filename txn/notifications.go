@@ -59,3 +59,21 @@ type GetNotifications_UnreadCount struct {
 	ExcludeTypes []string `query:"exclude_types"`
 	AccountID    string   `query:"account_id"`
 }
+
+// GetNotificationPolicy is the input for GET /api/v2/notifications/policy, which returns NotificationPolicy.
+// https://docs.joinmastodon.org/methods/notifications/#get-policy
+type GetNotificationPolicy struct {
+	Host string `header:"Host"`
+}
+
+// PatchNotificationPolicy is the input for PATCH /api/v2/notifications/policy, which returns NotificationPolicy.
+// https://docs.joinmastodon.org/methods/notifications/#update-policy
+type PatchNotificationPolicy struct {
+	Host               string `header:"Host"`
+	ForNotFollowing    string `form:"for_not_following"`
+	ForNotFollowers    string `form:"for_not_followers"`
+	ForNewAccounts     string `form:"for_new_accounts"`
+	ForPrivateMentions string `form:"for_private_mentions"`
+	ForLimitedAccounts string `form:"for_limited_accounts"`
+	ForBots            string `form:"for_bots"`
+}
