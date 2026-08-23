@@ -175,7 +175,7 @@ type API[AuthToken ScopesGetter] struct {
 	PostPoll_Votes func(AuthToken, txn.PostPoll_Votes) ([]object.Poll, error)
 
 	// https://docs.joinmastodon.org/methods/preferences/
-	GetPreferences func(AuthToken, txn.GetPreferences) (map[string]any, error)
+	GetPreferences func(AuthToken, txn.GetPreferences) (object.Preferences, error)
 
 	// https://docs.joinmastodon.org/methods/profile/
 	DeleteProfile_Avatar func(AuthToken, txn.DeleteProfile_Avatar) (object.Account, error)
