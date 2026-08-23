@@ -49,3 +49,13 @@ type PostNotification_Dismiss struct {
 	Host string `header:"Host"`
 	ID   string `form:"id"`
 }
+
+// GetNotifications_UnreadCount is the input for GET /api/v1/notifications/unread_count, which returns NotificationsUnreadCount.
+// https://docs.joinmastodon.org/methods/notifications/#unread-count
+type GetNotifications_UnreadCount struct {
+	Host         string   `header:"Host"`
+	Limit        int      `query:"limit"`
+	Types        []string `query:"types"`
+	ExcludeTypes []string `query:"exclude_types"`
+	AccountID    string   `query:"account_id"`
+}

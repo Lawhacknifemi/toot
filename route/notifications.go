@@ -21,3 +21,6 @@ const PostNotifications_Clear = "/api/v1/notifications/clear"
 // PostNotification_Dismiss is the route for POST /api/v1/notifications/dismiss.
 // https://docs.joinmastodon.org/methods/notifications/#dismiss
 const PostNotification_Dismiss = "/api/v1/notifications/dismiss"
+
+// https://docs.joinmastodon.org/methods/notifications/#unread-count
+const GetNotifications_UnreadCount = "/api/v1/notifications/unread_count"

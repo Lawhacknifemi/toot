@@ -21,3 +21,6 @@ const PostNotifications_Clear = WriteNotifications
 // PostNotification_Dismiss is the OAuth scope required by POST /api/v1/notifications/dismiss.
 // https://docs.joinmastodon.org/methods/notifications/#dismiss
 const PostNotification_Dismiss = WriteNotifications
+
+// https://docs.joinmastodon.org/methods/notifications/#unread-count
+const GetNotifications_UnreadCount = ReadNotifications

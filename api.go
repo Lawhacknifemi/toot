@@ -157,10 +157,11 @@ type API[AuthToken ScopesGetter] struct {
 	GetMutes func(AuthToken, txn.GetMutes) ([]object.Account, PageInfo, error)
 
 	// https://docs.joinmastodon.org/methods/notifications/
-	GetNotifications         func(AuthToken, txn.GetNotifications) ([]object.Notification, PageInfo, error)
-	GetNotification          func(AuthToken, txn.GetNotification) (object.Notification, error)
-	PostNotifications_Clear  func(AuthToken, txn.PostNotifications_Clear) (object.Notification, error)
-	PostNotification_Dismiss func(AuthToken, txn.PostNotification_Dismiss) (object.Notification, error)
+	GetNotifications             func(AuthToken, txn.GetNotifications) ([]object.Notification, PageInfo, error)
+	GetNotification              func(AuthToken, txn.GetNotification) (object.Notification, error)
+	GetNotifications_UnreadCount func(AuthToken, txn.GetNotifications_UnreadCount) (object.NotificationsUnreadCount, error)
+	PostNotifications_Clear      func(AuthToken, txn.PostNotifications_Clear) (object.Notification, error)
+	PostNotification_Dismiss     func(AuthToken, txn.PostNotification_Dismiss) (object.Notification, error)
 
 	// https://docs.joinmastodon.org/methods/oauth/
 	GetOAuth_Authorize func(AuthToken, txn.GetOAuth_Authorize) (struct{}, error)
