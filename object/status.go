@@ -37,4 +37,5 @@ type Status struct {
 	QuotesCount        int                `json:"quotes_count"`                     // How many quotes this status has received.
 	Quote              *Quote             `json:"quote,omitempty"`
 	QuoteApproval      *QuoteApproval     `json:"quote_approval,omitempty"`
+	TaggedCollections  []Collection       `json:"tagged_collections"`
 }
