@@ -56,6 +56,17 @@ type API[AuthToken ScopesGetter] struct {
 	// https://docs.joinmastodon.org/methods/bookmarks/
 	GetBookmarks func(AuthToken, txn.GetBookmarks) ([]object.Status, error)
 
+	// https://docs.joinmastodon.org/methods/collections/
+	PostCollection             func(AuthToken, txn.PostCollection) (object.Collection, error)
+	GetCollection              func(AuthToken, txn.GetCollection) (object.CollectionWithAccounts, error)
+	GetAccount_Collections     func(AuthToken, txn.GetAccount_Collections) ([]object.Collection, PageInfo, error)
+	GetAccount_InCollections   func(AuthToken, txn.GetAccount_InCollections) ([]object.Collection, PageInfo, error)
+	PatchCollection            func(AuthToken, txn.PatchCollection) (object.Collection, error)
+	DeleteCollection           func(AuthToken, txn.DeleteCollection) (struct{}, error)
+	PostCollection_Item        func(AuthToken, txn.PostCollection_Item) (object.CollectionItem, error)
+	DeleteCollection_Item      func(AuthToken, txn.DeleteCollection_Item) (struct{}, error)
+	PostCollection_Item_Revoke func(AuthToken, txn.PostCollection_Item_Revoke) (struct{}, error)
+
 	// https://docs.joinmastodon.org/methods/conversations/
 	GetConversations     func(AuthToken, txn.GetConversations) ([]object.Conversation, PageInfo, error)
 	DeleteConversation   func(AuthToken, txn.DeleteConversation) (struct{}, error)
