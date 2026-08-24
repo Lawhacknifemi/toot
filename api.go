@@ -157,13 +157,20 @@ type API[AuthToken ScopesGetter] struct {
 	GetMutes func(AuthToken, txn.GetMutes) ([]object.Account, PageInfo, error)
 
 	// https://docs.joinmastodon.org/methods/notifications/
-	GetNotifications             func(AuthToken, txn.GetNotifications) ([]object.Notification, PageInfo, error)
-	GetNotification              func(AuthToken, txn.GetNotification) (object.Notification, error)
-	GetNotifications_UnreadCount func(AuthToken, txn.GetNotifications_UnreadCount) (object.NotificationsUnreadCount, error)
-	PostNotifications_Clear      func(AuthToken, txn.PostNotifications_Clear) (object.Notification, error)
-	PostNotification_Dismiss     func(AuthToken, txn.PostNotification_Dismiss) (object.Notification, error)
-	GetNotificationPolicy        func(AuthToken, txn.GetNotificationPolicy) (object.NotificationPolicy, error)
-	PatchNotificationPolicy      func(AuthToken, txn.PatchNotificationPolicy) (object.NotificationPolicy, error)
+	GetNotifications                 func(AuthToken, txn.GetNotifications) ([]object.Notification, PageInfo, error)
+	GetNotification                  func(AuthToken, txn.GetNotification) (object.Notification, error)
+	GetNotifications_UnreadCount     func(AuthToken, txn.GetNotifications_UnreadCount) (object.NotificationsUnreadCount, error)
+	PostNotifications_Clear          func(AuthToken, txn.PostNotifications_Clear) (object.Notification, error)
+	PostNotification_Dismiss         func(AuthToken, txn.PostNotification_Dismiss) (object.Notification, error)
+	GetNotificationPolicy            func(AuthToken, txn.GetNotificationPolicy) (object.NotificationPolicy, error)
+	PatchNotificationPolicy          func(AuthToken, txn.PatchNotificationPolicy) (object.NotificationPolicy, error)
+	GetNotificationRequests          func(AuthToken, txn.GetNotificationRequests) ([]object.NotificationRequest, PageInfo, error)
+	GetNotificationRequest           func(AuthToken, txn.GetNotificationRequest) (object.NotificationRequest, error)
+	PostNotificationRequest_Accept   func(AuthToken, txn.PostNotificationRequest_Accept) (struct{}, error)
+	PostNotificationRequest_Dismiss  func(AuthToken, txn.PostNotificationRequest_Dismiss) (struct{}, error)
+	PostNotificationRequests_Accept  func(AuthToken, txn.PostNotificationRequests_Accept) (struct{}, error)
+	PostNotificationRequests_Dismiss func(AuthToken, txn.PostNotificationRequests_Dismiss) (struct{}, error)
+	GetNotificationRequests_Merged   func(AuthToken, txn.GetNotificationRequests_Merged) (object.NotificationRequestsMerged, error)
 
 	// https://docs.joinmastodon.org/methods/oauth/
 	GetOAuth_Authorize func(AuthToken, txn.GetOAuth_Authorize) (struct{}, error)
