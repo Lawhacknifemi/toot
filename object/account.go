@@ -30,6 +30,7 @@ type Account struct {
 	FollowingCount int            `json:"following_count"`     // The reported follows of this profile.
 
 	// Optional values for special kinds of accounts
-	Source        *AccountSource `json:"source,omitempty"`          // An extra attribute that contains source values to be used with API methods that verify credentials and update credentials.
-	MuteExpiresAt string         `json:"mute_expires_at,omitempty"` // When a timed mute will expire, if applicable. (ISO 8601 Datetime), or null if the mute is indefinite
+	Source          *AccountSource   `json:"source,omitempty"`          // An extra attribute that contains source values to be used with API methods that verify credentials and update credentials.
+	MuteExpiresAt   string           `json:"mute_expires_at,omitempty"` // When a timed mute will expire, if applicable. (ISO 8601 Datetime), or null if the mute is indefinite
+	FeatureApproval *FeatureApproval `json:"feature_approval,omitempty"`
 }
