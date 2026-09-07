@@ -34,6 +34,10 @@ const GetAccount_Followers = Private
 // https://docs.joinmastodon.org/methods/accounts/#following
 const GetAccount_Following = Private
 
+// GetAccount_Endorsements is the OAuth scope required by GET /api/v1/accounts/:id/endorsements.
+// https://docs.joinmastodon.org/methods/accounts/#endorsements
+const GetAccount_Endorsements = ReadAccounts
+
 // GetAccount_FeaturedTags is the OAuth scope required by GET /api/v1/accounts/:id/featured_tags.
 // https://docs.joinmastodon.org/methods/accounts/#featured_tags
 const GetAccount_FeaturedTags = Private
