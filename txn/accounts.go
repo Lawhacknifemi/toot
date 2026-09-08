@@ -37,6 +37,13 @@ type PatchAccount_UpdateCredentials struct {
 	Discoverable bool   `form:"discoverable"`
 }
 
+// GetAccounts is the input for GET /api/v1/accounts, a batch lookup that returns []Account.
+// https://docs.joinmastodon.org/methods/accounts/#index
+type GetAccounts struct {
+	Host string   `header:"Host"`
+	IDs  []string `query:"id[]"`
+}
+
 // GetAccount is the input for GET /api/v1/accounts/:id.
 // https://docs.joinmastodon.org/methods/accounts/#get
 type GetAccount struct {
