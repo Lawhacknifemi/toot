@@ -18,6 +18,10 @@ const GetAccount_VerifyCredentials = "/api/v1/accounts/verify_credentials"
 // https://docs.joinmastodon.org/methods/accounts/#update_credentials
 const PatchAccount_UpdateCredentials = "/api/v1/accounts/update_credentials"
 
+// GetAccounts is the route for GET /api/v1/accounts, a batch lookup by id[].
+// https://docs.joinmastodon.org/methods/accounts/#index
+const GetAccounts = "/api/v1/accounts"
+
 // GetAccount is the route for GET /api/v1/accounts/:id.
 // https://docs.joinmastodon.org/methods/accounts/#get
 const GetAccount = "/api/v1/accounts/:id"
