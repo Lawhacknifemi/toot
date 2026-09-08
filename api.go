@@ -19,6 +19,7 @@ type API[AuthToken ScopesGetter] struct {
 	PostAccount                     func(AuthToken, txn.PostAccount) (object.Token, error)
 	GetAccount_VerifyCredentials    func(AuthToken, txn.GetAccount_VerifyCredentials) (object.Account, error)
 	PatchAccount_UpdateCredentials  func(AuthToken, txn.PatchAccount_UpdateCredentials) (object.Account, error)
+	GetAccounts                     func(AuthToken, txn.GetAccounts) ([]object.Account, error)
 	GetAccount                      func(AuthToken, txn.GetAccount) (object.Account, error)
 	GetAccount_Statuses             func(AuthToken, txn.GetAccount_Statuses) ([]object.Status, PageInfo, error)
 	GetAccount_Lists                func(AuthToken, txn.GetAccount_Lists) ([]object.List, error)
