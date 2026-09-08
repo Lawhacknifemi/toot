@@ -18,6 +18,10 @@ const GetAccount_VerifyCredentials = ReadAccounts
 // https://docs.joinmastodon.org/methods/accounts/#update_credentials
 const PatchAccount_UpdateCredentials = WriteAccounts
 
+// GetAccounts is the OAuth scope required by GET /api/v1/accounts (batch lookup).
+// https://docs.joinmastodon.org/methods/accounts/#index
+const GetAccounts = Public
+
 // GetAccount is the OAuth scope required by GET /api/v1/accounts/:id.
 // https://docs.joinmastodon.org/methods/accounts/#get
 const GetAccount = Public
