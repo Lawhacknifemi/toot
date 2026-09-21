@@ -154,6 +154,8 @@ type API[AuthToken ScopesGetter] struct {
 
 	// https://docs.joinmastodon.org/methods/media/
 	PostMedia func(AuthToken, txn.PostMedia) (object.MediaAttachment, error)
+	GetMedia  func(AuthToken, txn.GetMedia) (object.MediaAttachment, error)
+	PutMedia  func(AuthToken, txn.PutMedia) (object.MediaAttachment, error)
 
 	// https://docs.joinmastodon.org/methods/mutes/
 	GetMutes func(AuthToken, txn.GetMutes) ([]object.Account, PageInfo, error)
